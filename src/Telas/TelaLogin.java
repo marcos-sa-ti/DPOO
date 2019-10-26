@@ -9,12 +9,12 @@ package Telas;
  *
  * @author marcos.sbrito2
  */
-public class Tela01 extends javax.swing.JPanel {
+public class TelaLogin extends javax.swing.JPanel {
 
     /**
      * Creates new form Tela01
      */
-    public Tela01() {
+    public TelaLogin() {
         initComponents();
     }
     
