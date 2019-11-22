@@ -1,10 +1,21 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  marcos.sbrito2
- * Created: 08/11/2019
- */
+create database controleacesso;
+
+use controleacesso;
+
+CREATE TABLE funcionario
+(
+id BIGINT NOT NULL auto_increment,	
+codigocartao varchar (10) NOT NULL,
+nome VARCHAR(100) NOT NULL,
+datanascimento date NOT NULL,
+numerodocumero VARCHAR(09) NOT NULL,
+numerocpf VARCHAR (11) NOT NULL,
+telefone VARCHAR(10) NOT NULL,
+cargo VARCHAR (20)NOT NULL,
+setor VARCHAR (20) NOT NULL,
+empresa VARCHAR (30) NOT NULL,
+horaE timestamp NOT NULL,
+horaS timestamp,
+CONSTRAINT pk_tbcliente PRIMARY KEY(id)
+);
 
