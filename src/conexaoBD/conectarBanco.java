@@ -15,11 +15,11 @@ public class conectarBanco {
             // NOME DO BANCO DE DADOS
             String nomeBD = "";
             // COLOCAR A PORTA
-            String url = "jdbc:mysql://localhost:3306/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
+            String url = "jdbc:mysql://localhost:33/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
             // USUARIO
             String username = "root";
             // SENHA
-            String password = "123456";
+            String password = "";
             connection = DriverManager.getConnection(url, username, password);
             return connection;
 
