@@ -5,12 +5,12 @@ import java.sql.Date;
 public abstract class Pessoa {
     
     private long id;
-    private int codigocartao;
+    private String codigocartao;
     private String nome;
     private Date dataNascimento;
-    private int numeroDocumento;
-    private int numeroCPF;
-    private int telefone;
+    private String numeroDocumento;
+    private String numeroCPF;
+    private String telefone;
 
     public long getId() {
         return id;
@@ -20,11 +20,11 @@ public abstract class Pessoa {
         this.id = id;
     }
 
-    public int getCodigocartao() {
+    public String getCodigocartao() {
         return codigocartao;
     }
 
-    public void setCodigocartao(int codigocartao) {
+    public void setCodigocartao(String codigocartao) {
         this.codigocartao = codigocartao;
     }
 
@@ -44,28 +44,29 @@ public abstract class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getNumeroDocumento() {
+    public String getNumeroDocumento() {
         return numeroDocumento;
     }
 
-    public void setNumeroDocumento(int numeroDocumento) {
+    public void setNumeroDocumento(String numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
     }
 
-    public int getNumeroCPF() {
+    public String getNumeroCPF() {
         return numeroCPF;
     }
 
-    public void setNumeroCPF(int numeroCPF) {
+    public void setNumeroCPF(String numeroCPF) {
         this.numeroCPF = numeroCPF;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-  
+
+ 
 }

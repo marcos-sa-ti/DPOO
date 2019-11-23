@@ -1,22 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package DAO;
 
 import classes.Funcionario;
-import classes.Gerenciador;
 import conexaoBD.conectarBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import javax.swing.JOptionPane;
 
-/*
-public abstract class FuncDAO implements  Gerenciador {
+/**
+ *
+ * @author marcos.sbrito2
+ */
+public class testeDAO {
     
-    
-    public void  cadastrarFuncionario (Funcionario novoFuncionario) 
-            throws SQLException, Exception {
+    public void  cadastrarFuncionario (Funcionario novoFuncionario) throws SQLException, ClassNotFoundException 
+            {
         
-         
+         Connection conexao = conectarBanco.getConexao();
          PreparedStatement prep = null;
          
          try {
@@ -54,11 +59,9 @@ public abstract class FuncDAO implements  Gerenciador {
                  conexao.close();
             }
         }
-         
-         
     
-    }
-    
-    
+            }
 }
-*/
+
+    
+

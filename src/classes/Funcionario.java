@@ -2,10 +2,6 @@ package classes;
 
 import java.sql.Timestamp;
 
-/**
- *
- * @author marcos.sbrito2
- */
 public class Funcionario extends Pessoa {
     
     private String cargo;

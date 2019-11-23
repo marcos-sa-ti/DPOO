@@ -6,16 +6,16 @@ import java.sql.SQLException;
 
 public class conectarBanco {
     
-    public  static Connection getConexao() throws SQLException, ClassNotFoundException {
+    public static Connection getConexao() throws SQLException, ClassNotFoundException {
         
         try {
             Connection connection = null;
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
             // NOME DO BANCO DE DADOS
-            String nomeBD = "";
+            String nomeBD = "controleacesso";
             // COLOCAR A PORTA
-            String url = "jdbc:mysql://localhost:33/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
+            String url = "jdbc:mysql://localhost:3307/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
             // USUARIO
             String username = "root";
             // SENHA
@@ -28,7 +28,8 @@ public class conectarBanco {
             return null;
         }
     }
-
+    
+    
     public void restartConnection() throws SQLException, ClassNotFoundException {
         getConexao().close();
         getConexao();
