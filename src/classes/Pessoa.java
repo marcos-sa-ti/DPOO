@@ -2,16 +2,27 @@ package classes;
 
 import java.sql.Date;
 
-public abstract class Pessoa {
+public class Pessoa {
     
-    private long id;
-    private String codigocartao;
-    private String nome;
-    private Date dataNascimento;
-    private String numeroDocumento;
-    private String numeroCPF;
-    private String telefone;
+    protected long id;
+    //protected String codigocartao;
+    protected String nome;
+    //protected Date dataNascimento;
+    protected String numeroDocumento;
+    protected String numeroCPF;
+    protected String telefone;
 
+    public Pessoa(long id, String nome, String numeroDocumento, String numeroCPF, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.numeroDocumento = numeroDocumento;
+        this.numeroCPF = numeroCPF;
+        this.telefone = telefone;
+    }
+
+    
+    
+    
     public long getId() {
         return id;
     }
@@ -19,7 +30,7 @@ public abstract class Pessoa {
     public void setId(long id) {
         this.id = id;
     }
-
+    /*
     public String getCodigocartao() {
         return codigocartao;
     }
@@ -27,7 +38,7 @@ public abstract class Pessoa {
     public void setCodigocartao(String codigocartao) {
         this.codigocartao = codigocartao;
     }
-
+    */
     public String getNome() {
         return nome;
     }
@@ -35,7 +46,7 @@ public abstract class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    /*
     public Date getDataNascimento() {
         return dataNascimento;
     }
@@ -43,7 +54,7 @@ public abstract class Pessoa {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
+    */
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
@@ -68,5 +79,4 @@ public abstract class Pessoa {
         this.telefone = telefone;
     }
 
- 
 }

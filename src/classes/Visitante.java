@@ -1,5 +1,7 @@
 package classes;
 
+import java.sql.Date;
+
 /**
  *
  * @author marcos.sbrito2
@@ -9,6 +11,11 @@ public class Visitante extends Pessoa {
     private String empresaVisitada;
     private String funcVisitado;
     private String tipoVisita;
+
+    public Visitante(long id, String nome, String numeroDocumento, String numeroCPF, String telefone) {
+        super(id, nome, numeroDocumento, numeroCPF, telefone);
+    }
+
 
     public String getEmpresaVisitada() {
         return empresaVisitada;

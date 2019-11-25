@@ -1,6 +1,6 @@
 package Telas;
 
-import DAO.testeDAO;
+//import Testes.testeDAO;
 import classes.Funcionario;
 import java.sql.Date;
 import java.text.DateFormat;
@@ -13,15 +13,17 @@ import javax.swing.JOptionPane;
 
 public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
-
+    Funcionario funcionario = new Funcionario(WIDTH, "Yago", "500035349", "46586275822", "36924774"   );
+    
+    
     public TelaCadastroFuncionario() {
         initComponents();
         setLocationRelativeTo(null);
         
     }
     
-    Funcionario novoFuncionario = new Funcionario();
-    testeDAO dao = new testeDAO();
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -176,32 +178,24 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        funcionario.setNome(jTextField1.getText());
+        funcionario.setNumeroDocumento(jTextField3.getText());
+        funcionario.setNumeroCPF(jTextField4.getText());
+        funcionario.setTelefone(jTextField5.getText());
+        funcionario.setCargo(jTextField6.getText());
+        funcionario.setSetor(jTextField7.getText());
+        funcionario.setEmpresa(jTextField8.getText());
         
-      
         try {
-             novoFuncionario.setNome(jTextField1.getText());
-            //DateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
-            //Date dataformatada = (Date) formatador.parse(jTextField2.getText());
-            //novoFuncionario.setDataNascimento(dataformatada);
-            novoFuncionario.setNumeroDocumento(jTextField3.getText());
-            novoFuncionario.setNumeroCPF(jTextField4.getText());
-            novoFuncionario.setTelefone(jTextField5.getText());
-            novoFuncionario.setCargo((jTextField6.getText()));
-            novoFuncionario.setSetor(jTextField7.getText());
-            novoFuncionario.setEmpresa(jTextField8.getText());
-            dao.cadastrarFuncionario(novoFuncionario);
-            
-            
-            
-        
-        } catch (Exception ex) {
-            Logger.getLogger(TelaCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        Servicos.ServicosFuncionario.cadastrarFuncionario(funcionario);
+        JOptionPane.showMessageDialog(this, "Deu certo");
+        }
+        catch( Exception ex){
+          Logger.getLogger(TelaCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
         JOptionPane.showMessageDialog(this, "Fim da operação");
-        dispose();
-        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -1,31 +1,29 @@
 package DAO;
 
 import classes.Funcionario;
-import classes.Gerenciador;
 import conexaoBD.conectarBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import javax.swing.JOptionPane;
+import Interfaces.Cadastrar;
 
-/*
-public abstract class FuncDAO implements  Gerenciador {
+
+public abstract class FuncDAO implements Cadastrar {
     
-    
-    public void  cadastrarFuncionario (Funcionario novoFuncionario) 
+    public static void  cadastrarPessoa (Funcionario novoFuncionario) 
             throws SQLException, Exception {
         
-         
-         PreparedStatement prep = null;
-         
-         try {
-         prep = conexao.prepareStatement("INSERT INTO funcionario (id, nome, numerodocumento,"
-         + "numerocpf, telefone,cargo, setor, empresa) VALUES (?,?,?,?,?,?,?,?)");
-         
-         // Mudar os parametros 
         
-            prep.setLong(1, novoFuncionario.getId());
+         String sql = "INSERT INTO funcionario (nome, numerodocumento,"
+         + "numerocpf, telefone,cargo, setor, empresa) VALUES (?,?,?,?,?,?,?)";
+         Connection conexao = null;
+         PreparedStatement prep = null;
+         try {
+         
+            conexao = conectarBanco.getConnection();
+            //prep.setLong(1, novoFuncionario.getId());
             //prep.setString(2, novoFuncionario.getCodigocartao());
             prep.setString(3, novoFuncionario.getNome());
             //prep.setDate(4, novoFuncionario.getDataNascimento());
@@ -37,28 +35,22 @@ public abstract class FuncDAO implements  Gerenciador {
             prep.setString(10, novoFuncionario.getEmpresa());
             //prep.setTimestamp(11, novoFuncionario.getHoraE());
             //prep.setTimestamp(12, novoFuncionario.getHoraS());
-            prep.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-            
-            
+            prep.execute();
             
         }
          
-         catch ( SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Erro ao salvar");
-                    }
-            
             finally {
+             
+             if (prep != null && !prep.isClosed()){
+             prep.close();
+             }
             
             if ( conexao != null && ! conexao.isClosed()) {
                  conexao.close();
             }
         }
-         
-         
-    
-    }
-    
+    } 
     
 }
-*/
+    
+

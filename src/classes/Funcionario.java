@@ -1,5 +1,6 @@
 package classes;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Funcionario extends Pessoa {
@@ -7,9 +8,13 @@ public class Funcionario extends Pessoa {
     private String cargo;
     private String setor;
     private String empresa;
-    private Timestamp horaE;
-    private Timestamp horaS;
+    //private Timestamp horaE;
+    //private Timestamp horaS;
 
+    public Funcionario(long id, String nome, String numeroDocumento, String numeroCPF, String telefone) {
+        super(id, nome, numeroDocumento, numeroCPF, telefone);
+    }
+    
     public String getCargo() {
         return cargo;
     }
@@ -33,7 +38,7 @@ public class Funcionario extends Pessoa {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-
+    /*
     public Timestamp getHoraE() {
         return horaE;
     }
@@ -49,5 +54,5 @@ public class Funcionario extends Pessoa {
     public void setHoraS(Timestamp horaS) {
         this.horaS = horaS;
     }
-    
+    */
 }

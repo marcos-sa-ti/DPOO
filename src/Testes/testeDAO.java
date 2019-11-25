@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package Testes;
 
 import classes.Funcionario;
 import conexaoBD.conectarBanco;
@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author marcos.sbrito2
  */
+/*
 public class testeDAO {
     
     public void  cadastrarFuncionario (Funcionario novoFuncionario) throws SQLException, ClassNotFoundException 
@@ -64,4 +65,4 @@ public class testeDAO {
 }
 
     
-
+*/
