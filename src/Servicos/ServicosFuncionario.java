@@ -13,10 +13,11 @@ import classes.Funcionario;
  * @author CASA
  */
 public class ServicosFuncionario {
-    
-    public static void cadastrarFuncionario(Funcionario funcionario) throws Exception{
-        FuncDAO.cadastrarPessoa(funcionario);
+
+    public static void cadastrarFuncionario(Funcionario funcionario) throws Exception {
+
+        FuncDAO dao = new FuncDAO();
+        dao.cadastrarPessoa(funcionario);
     }
-    
-    
+
 }

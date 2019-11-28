@@ -5,13 +5,16 @@
  */
 package Interfaces;
 
+import classes.Funcionario;
+import java.sql.SQLException;
+
 /**
  *
  * @author CASA
  */
 public interface Cadastrar {
     
-    public void cadastrarPessoa();
+    public void cadastrarPessoa(Funcionario novoFuncionario)  throws SQLException, Exception;
     
     
     //public void excluirPessoa();

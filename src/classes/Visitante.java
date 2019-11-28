@@ -12,9 +12,16 @@ public class Visitante extends Pessoa {
     private String funcVisitado;
     private String tipoVisita;
 
-    public Visitante(long id, String nome, String numeroDocumento, String numeroCPF, String telefone) {
-        super(id, nome, numeroDocumento, numeroCPF, telefone);
+    public Visitante() {
     }
+
+    public Visitante(String empresaVisitada, String funcVisitado, String tipoVisita) {
+        this.empresaVisitada = empresaVisitada;
+        this.funcVisitado = funcVisitado;
+        this.tipoVisita = tipoVisita;
+    }
+
+   
 
 
     public String getEmpresaVisitada() {

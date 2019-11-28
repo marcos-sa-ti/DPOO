@@ -1,28 +1,34 @@
 package classes;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
-public class Pessoa {
-    
+public abstract class Pessoa {
+
     protected long id;
-    //protected String codigocartao;
+    protected String codigocartao;
     protected String nome;
-    //protected Date dataNascimento;
+    protected LocalDate dataNascimento;
     protected String numeroDocumento;
     protected String numeroCPF;
     protected String telefone;
 
-    public Pessoa(long id, String nome, String numeroDocumento, String numeroCPF, String telefone) {
+    public Pessoa(){
+        
+    }
+    
+    public Pessoa(long id, String codigocartao, String nome, LocalDate dataNascimento, String numeroDocumento, String numeroCPF, String telefone) {
         this.id = id;
+        this.codigocartao = codigocartao;
         this.nome = nome;
+        this.dataNascimento = dataNascimento;
         this.numeroDocumento = numeroDocumento;
         this.numeroCPF = numeroCPF;
         this.telefone = telefone;
     }
 
-    
-    
-    
+
+
     public long getId() {
         return id;
     }
@@ -30,7 +36,7 @@ public class Pessoa {
     public void setId(long id) {
         this.id = id;
     }
-    /*
+
     public String getCodigocartao() {
         return codigocartao;
     }
@@ -38,7 +44,7 @@ public class Pessoa {
     public void setCodigocartao(String codigocartao) {
         this.codigocartao = codigocartao;
     }
-    */
+
     public String getNome() {
         return nome;
     }
@@ -46,15 +52,15 @@ public class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    /*
-    public Date getDataNascimento() {
+
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    */
+
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
