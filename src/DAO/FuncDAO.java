@@ -5,18 +5,13 @@ import conexaoBD.conectarBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import Interfaces.Cadastrar;
+import classes.Visitante;
 import java.sql.Date;
 import java.time.LocalDate;
+import Interfaces.Gerenciador;
 
-public class FuncDAO implements Cadastrar {
+public class FuncDAO implements Gerenciador {
 
-    /**
-     *
-     * @param novoFuncionario
-     * @throws SQLException
-     * @throws Exception
-     */
     @Override
     public void cadastrarPessoa(Funcionario novoFuncionario)
             throws SQLException, Exception {
@@ -54,4 +49,56 @@ public class FuncDAO implements Cadastrar {
         }
     }
 
+    @Override
+    public void cadastrarPessoa(Visitante novoVisitante)
+            throws SQLException, Exception {
+
+        String sql = "INSERT INTO visitante (nome, numerodocumento,"
+                + "numerocpf, telefone,datanascimento,codigocartao, empresaVisitada, funcVisitado, tipoVisita) VALUES (?,?,?,?,?,?,?,?,?)";
+
+        Connection conexao = null;
+        PreparedStatement prep = null;
+        conexao = conectarBanco.getConnection();
+        try {
+
+            prep = conexao.prepareStatement(sql);
+            prep.setString(1, novoVisitante.getNome());
+            prep.setString(2, novoVisitante.getNumeroDocumento());
+            prep.setString(3, novoVisitante.getNumeroCPF());
+            prep.setString(4, novoVisitante.getTelefone());
+            prep.setDate(5, Date.valueOf(novoVisitante.getDataNascimento()));
+            prep.setString(6, novoVisitante.getCodigocartao()); 
+            prep.setString(7, novoVisitante.getEmpresaVisitada());
+            prep.setString(8, novoVisitante.getFuncVisitado());
+            prep.setString(9, novoVisitante.getTipoVisita());
+            prep.executeUpdate();
+
+        } finally {
+
+            if (prep != null && !prep.isClosed()) {
+                prep.close();
+            }
+
+            if (conexao != null && !conexao.isClosed()) {
+                conexao.close();
+            }
+        }
+    }
+    
+    @Override
+    public void buscarPessoa(Funcionario novofunacionario)
+            throws SQLException, Exception {
+        
+    }
+    
+    @Override
+    public void buscarPessoa(Visitante novoVisitante)
+            throws SQLException, Exception {
+    
+    }
+    
+    
+    
+    
+    
 }

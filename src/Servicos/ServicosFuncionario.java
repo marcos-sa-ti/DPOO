@@ -19,5 +19,7 @@ public class ServicosFuncionario {
         FuncDAO dao = new FuncDAO();
         dao.cadastrarPessoa(funcionario);
     }
+    
+    
 
 }
