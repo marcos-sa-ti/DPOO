@@ -19,7 +19,6 @@ horaS timestamp,
 CONSTRAINT pk_tbcliente PRIMARY KEY(id)
 );
 
-
 CREATE TABLE visitante
 (
 id BIGINT NOT NULL auto_increment,	
@@ -32,5 +31,7 @@ telefone VARCHAR(10) NOT NULL,
 empresaVisitada VARCHAR(25) NOT NULL,
 funcVisitado VARCHAR(25) NOT NULL,
 tipoVisita VARCHAR (15),
+horaE timestamp,
+horaS timestamp,
 CONSTRAINT pk_tbfuncionario PRIMARY KEY(id)
 );

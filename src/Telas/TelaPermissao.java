@@ -278,6 +278,7 @@ public class TelaPermissao extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Visitante localizado!");
 
                     jLabel4.setText(String.valueOf(jTextField1.getText() + ""));
+                    jLabel5.setText(dao.obterNome(jTextField1.getText()));
 
                 } else {
 
@@ -308,6 +309,7 @@ public class TelaPermissao extends javax.swing.JFrame {
              if (jRadioButton3.isSelected()) {
 
                 JOptionPane.showMessageDialog(this, "Acesso Permitido!");
+                
                 try {
                     dao.permitirAcessoVisitante(jLabel4.getText());
                 } catch (Exception ex) {
@@ -317,6 +319,7 @@ public class TelaPermissao extends javax.swing.JFrame {
             } else if (jRadioButton4.isSelected()) {
 
                 JOptionPane.showMessageDialog(this, "Acesso Excluido");
+                
 
                 try {
                     dao.excluiAcessoVisitante(jLabel4.getText());
@@ -327,6 +330,7 @@ public class TelaPermissao extends javax.swing.JFrame {
             } else {
 
                 JOptionPane.showMessageDialog(this, "Conceder Saida");
+                
 
                 try {
                     dao.saidaAcessoVisitante(jLabel4.getText());

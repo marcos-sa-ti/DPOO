@@ -248,7 +248,7 @@ public class FuncDAO implements Gerenciador {
     @Override
     public void saidaAcessoVisitante(String cpf) throws SQLException, Exception {
 
-        String sql = "UPDATE funcionario SET  horaS = ? where numerocpf = ?";
+        String sql = "UPDATE visitante SET  horaS = ? where numerocpf = ?";
 
         Connection conexao = null;
         PreparedStatement prep = null;
@@ -266,7 +266,7 @@ public class FuncDAO implements Gerenciador {
     @Override
     public void excluiAcessoVisitante(String cpf) throws SQLException, Exception {
 
-        String sql = "DELETE FROM funcionario where numerocpf = ?";
+        String sql = "DELETE FROM visitante where numerocpf = ?";
 
         Connection conexao = null;
         PreparedStatement prep = null;
