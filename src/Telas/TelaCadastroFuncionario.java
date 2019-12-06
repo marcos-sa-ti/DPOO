@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 
 
 public class TelaCadastroFuncionario extends javax.swing.JFrame {
-
-    //Funcionario funcionario = new Funcionario(WIDTH, "Yago", "500035349", "46586275822", "36924774"   );
     
     Funcionario funcionario = new Funcionario();
     
@@ -101,8 +99,6 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         }
 
         jLabel9.setText("Número do cartão:");
-
-        jTextField2.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

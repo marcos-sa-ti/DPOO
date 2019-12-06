@@ -2,14 +2,15 @@ package classes;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Funcionario extends Pessoa {
 
     private String cargo;
     private String setor;
     private String empresa;
-    //private Timestamp horaE;
-    //private Timestamp horaS;
+    private LocalDateTime horaE;
+    private LocalDateTime horaS;
 
     public Funcionario() {
     }
@@ -43,21 +44,21 @@ public class Funcionario extends Pessoa {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-    /*
-    public Timestamp getHoraE() {
+    
+    public LocalDateTime getHoraE() {
         return horaE;
     }
 
-    public void setHoraE(Timestamp horaE) {
+    public void setHoraE(LocalDateTime horaE) {
         this.horaE = horaE;
     }
 
-    public Timestamp getHoraS() {
+    public LocalDateTime getHoraS() {
         return horaS;
     }
 
-    public void setHoraS(Timestamp horaS) {
+    public void setHoraS(LocalDateTime horaS) {
         this.horaS = horaS;
     }
-     */
+     
 }
